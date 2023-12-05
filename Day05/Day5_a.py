@@ -1,16 +1,14 @@
 from functools import reduce
+from collections import namedtuple
 
 puzzle_input = open("./puzzle_input.txt", "r").read()
 
-
-class MapRange:
-    def __init__(self, map_range_def):
-        self.destination, self.source, self.length = map_range_def
+MapRange = namedtuple("MapRange", ["destination", "source", "length"])
         
 class Mapper:
 
     def __init__(self, mapping_definitions):
-        self.map_ranges = [MapRange(m) for m in mapping_definitions]
+        self.map_ranges = [MapRange(m[0], m[1], m[2]) for m in mapping_definitions]
         
     def map(self, num):
         for r in self.map_ranges:
