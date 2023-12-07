@@ -1,3 +1,36 @@
+"""
+Explanation:
+Instead of calculating all possible outcomes of races
+we find only the very first occurrence where the record is beat.
+From then on we can calculate the all the winning possibilities.
+
+
+i - velocity (millisecs of button push)
+j - remaining time 
+time = i + j
+distance = i * j
+
+So the best distance would be always (time/2)^2 i.e.  i = j 
+Pairs closer to this will be higher.
+So there is an interval of winning pairs where(i, j) beating record is the lower bound and (j, i) is the higher bound.
+The size of this interval therefore i - j + 1
+
+e.g:
+time: 7
+record: 9
+
+0-7 => 0
+1-6 => 6
+2-5 => 10*
+3-4 => 12*
+4-3 => 12*
+5-2 => 10*
+6-1 => 6
+7-0 => 0
+
+count: 5-2+1 = 4
+"""
+
 import re
 import math
 
