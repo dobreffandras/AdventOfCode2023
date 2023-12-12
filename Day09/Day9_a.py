@@ -1,5 +1,4 @@
 import re
-import os
 
 puzzle_input = open("./puzzle_input.txt", "r").read()
 
